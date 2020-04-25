@@ -3,12 +3,16 @@
 	let worker;
 
 	const main_thread_compute = function () {
-		console.log("MAIN THREAD COMPUTING....")
+		console.log("SINGLE THREAD COMPUTING....")
 		let i = 0;
-		while (i < 60000) {
-			console.log(`The number is ${i}`)
+		while (i < 400000) {
+			// console.log(`The number is ${i}`)
+
+			document.querySelector('#output').innerHTML = `<p>current number is: ${i} </p>`
+
 			i++
 		}
+		console.log("SINGLE THREAD COMPUTING DONE");
 	}
 
 	const worker_thread_compute = function () {
@@ -29,10 +33,12 @@
 
 
 	const test_responsive = function () {
-		// send message to worker
-		worker.postMessage('hey how are you')
-
 		alert(`I'm responsive! `);
+	}
+
+	const main_to_worker = function () {
+		// send message to worker
+		worker.postMessage("hey hows it going")
 	}
 
 	document.querySelector('#main-thread-compute').addEventListener('click', main_thread_compute)
@@ -42,5 +48,7 @@
 	document.querySelector('#worker-thread-terminate').addEventListener('click', terminate_worked_thread)
 
 	document.querySelector('#test-responsive').addEventListener('click', test_responsive)
+
+	// document.querySelector('#main-to-worker-data').addEventListener('click', main_to_worker)
 
 })()

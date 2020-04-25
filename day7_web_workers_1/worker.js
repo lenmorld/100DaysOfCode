@@ -7,7 +7,7 @@ onmessage = function (event) {
 // job of the worker thread
 
 let i = 0;
-while (i < 60000) {
+while (i < 400000) {
 	// debugger;
 	// worker thread still have access to console
 	// WARNING: this overwhelms the console a bit
@@ -20,4 +20,4 @@ while (i < 60000) {
 	// localStorage.setItem('current', i)
 }
 
-console.log(`DONE! last number is ${i}`)
+// console.log(`DONE! last number is ${i}`)
