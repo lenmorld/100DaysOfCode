@@ -1,0 +1,22 @@
+<html>
+
+<head>
+	<style>
+		button {
+			margin: 20px auto;
+			padding: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="output"></div>
+	<script src="sample_async.js"></script>
+	<button id="main-thread-compute">blocking compute (main thread)</button>
+	<button id="worker-thread-compute">Non blocking compute (worker thread)</button>
+	<button id="worker-thread-terminate">Terminate worker thread</button>
+	<button id="test-responsive">then try to click meeeeee</button>
+	<script src="main.js"></script>
+</body>
+
+</html>
