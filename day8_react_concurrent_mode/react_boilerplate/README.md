@@ -1,28 +1,9 @@
-# React boilerplate with webpack dev server
+# React Suspense and useTransition
 
-## Dev
+## Part 1
 
-```
-$ npm install
-$ npm run dev
-```
+Display a fallback UI and transitions for UI driven by async data fetching
 
-> `webpack-dev-server` runs on 4001 with  hot-reloading
+References:
 
-## Deploy
-
-```
-$ npm install
-$ npm run build
-```
-
-> builds `bundle.js`
-
-## Components
-
-- webpack 4
-- babel 7 with react preset
-
-## Nice-to-haves
-
-- [Cheap source maps](https://lennythedev.com/webpack/prettify_devtools/)
+https://kentcdodds.com/blog/how-to-enable-react-concurrent-mode
