@@ -25,7 +25,16 @@ app.get('/', (req, res) => {
 // Payload URL - URL of server that will receive the webhook POST requests
 // it will go to http://localhost:4567/payload
 app.post('/payload', (req, res) => {
-	console.log(req.body)
+	// console.log(req.body)
+
+	// req.body has all the info from the commit
+	// GO CRAZY!
+
+	// Object.keys(req.body)
+	console.log("Repo: ", req.body.repository.full_name)
+	console.log("Owner: ", req.body.repository.owner.email)
+	console.log("Commit message: ", req.body.commits[0].message)
+
 	res.send('OK');
 });
 
