@@ -3,12 +3,8 @@ const app = express();
 const bodyParser = require('body-parser');
 const port = 4000
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-app.get('/', (req, res) => {
-	res.send('CLIENT OK');
-});
+app.use(bodyParser.urlencoded({ extended: true })); // form data
+app.use(bodyParser.json()); // json
 
 app.post('/webhooks', (req, res) => {
 	console.log(req.body)
@@ -16,5 +12,6 @@ app.post('/webhooks', (req, res) => {
 });
 
 app.listen(port, () => {
+	console.log("<<< WEBHOOKS CLIENT >>>")
 	console.log(`Listening for webhooks on port ${port}`)
 })
