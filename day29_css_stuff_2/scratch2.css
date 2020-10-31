@@ -1,0 +1,27 @@
+.basketball::before {
+	content: " ";
+	position: absolute;
+	border: solid 5px black;
+	/* border-radius: 50%/200px 200px 0 0; */
+	border-color: transparent black transparent transparent;
+	width: 300px;
+	height: 300px;
+	left: -100px;
+	border-radius: 0 50% 50% 0;
+	top: -30px;
+	/* background-color: red; */
+}
+
+.basketball::after {
+	content: " ";
+	position: absolute;
+	border: solid 5px black;
+	border-color: transparent transparent transparent black;
+	/* border-radius: 50%/200px 200px 0 0; */
+	width: 200px;
+	left: 150px;
+	top: 10px;
+	border-radius: 50% 0 0 50%;
+	height: 170px;
+	/* background-color: red; */
+}
