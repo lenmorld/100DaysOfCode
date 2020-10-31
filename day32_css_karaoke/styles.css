@@ -1,0 +1,62 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	background-color: black;
+
+	margin: 0;
+}
+
+div.container {
+	margin: 1rem;
+}
+
+.karaoke {
+	/* padding: 1rem; */
+	font-size: 2.25rem;
+	color: lightgreen;
+	position: relative;
+
+	/* debug */
+	/* background: yellow; */
+
+	/* so ::after won't wrap to next line */
+	white-space: nowrap;
+
+	text-shadow: 2px 2px 0.25px #585858;
+}
+
+.karaoke::after {
+	/* content: "Saturday night... Saturday night!"; */
+	content: attr(data-text);
+	color: red;
+	top: 0;
+	left: 0;
+	position: absolute;
+
+	/* debug */
+	/* background: orange; */
+
+	/* initially hidden, and slowly unfold */
+	overflow: hidden;
+
+
+	/* display: inline-block; */
+	/* padding: 1rem; */
+
+	/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+
+	animation-name: karaoke;
+	animation-duration: 5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+@keyframes karaoke {
+	from {
+		width: 0;
+	}
+
+	to {
+		width: 100%;
+	}
+}

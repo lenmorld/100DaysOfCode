@@ -1,0 +1,205 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#box {
+	width: 200px;
+	height: 200px;
+	background-color: blue;
+
+	/**
+		blinking effect, with 1 sec delay in between
+		4 sec total duration
+		linear, alternate 
+		infinite loop
+	*/
+
+	/* full animation props */
+	animation-name: fade;
+	/* time it takes to complete 1 cycle */
+	animation-duration: 4s;
+	/* when the animation starts */
+	animation-delay: 1s;
+	/* how many times played form beginning to end */
+	animation-iteration-count: infinite;
+	/* cubic-bezier, etc */
+	animation-timing-function: linear;
+	/* reverse, then normal */
+	animation-direction: alternate;
+}
+
+
+/* shorthand */
+#box2 {
+	width: 200px;
+	height: 200px;
+	background-color: green;
+
+	animation: fade 4s 1s infinite linear alternate,
+		rotate 4s 1s infinite linear alternate
+}
+
+@keyframes fade {
+
+	/* from */
+	0% {
+		opacity: 1;
+	}
+
+	/* to */
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+#box3 {
+	width: 200px;
+	height: 200px;
+	background-color: coral;
+
+	/* animation: square-to-circle 2s 0s infinite linear alternate; */
+
+	/* with cubic-bezier "elastic" effect */
+	animation: square-to-circle 2s 0.5s infinite cubic-bezier(1, .015, .295, 1.225) alternate;
+
+	/* fix jagged outline in Firefox */
+	outline: 1px solid transparent;
+}
+
+@keyframes square-to-circle {
+
+	/* 5 stages */
+	0% {
+		border-radius: 0 0 0 0;
+		background: coral;
+		transform: rotate(0deg);
+	}
+
+	25% {
+		border-radius: 50% 0 0 0;
+		background: darksalmon;
+		transform: rotate(45deg);
+	}
+
+	50% {
+		border-radius: 50% 50% 0 0;
+		background: indianred;
+		transform: rotate(90deg);
+	}
+
+	75% {
+		border-radius: 50% 50% 50% 0;
+		background: lightcoral;
+		transform: rotate(135deg);
+	}
+
+	100% {
+		/* all */
+		border-radius: 50%;
+		background: darksalmon;
+		transform: rotate(180deg);
+	}
+}
+
+#cube-container {
+	margin-top: 500px;
+	margin-left: 100px
+}
+
+.wrap {
+	perspective: 800px;
+	perspective-origin: 50% 100px;
+}
+
+.cube {
+	position: relative;
+	width: 200px;
+	transform-style: preserve-3d;
+
+	animation: spin-cube 3s 1s infinite linear alternate;
+}
+
+.cube div {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	/* background-color: lightblue; */
+	border: 1px solid black;
+
+	box-shadow: inset 5px 5px 100px gray;
+}
+
+/* cube faces */
+.back {
+	transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+	transform: rotateY(-270deg) translateX(100px);
+	transform-origin: top right;
+}
+
+.left {
+	transform: rotateY(270deg) translateX(-100px);
+	transform-origin: center left;
+}
+
+.top {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top center;
+}
+
+.bottom {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom center;
+}
+
+.front {
+	transform: translateZ(100px);
+}
+
+@keyframes spin-cube {
+	from {
+		transform: rotateY(0);
+	}
+
+	to {
+		transform: rotateY(360deg);
+	}
+}
+
+
+/*************************/
+/* perspective */
+#perspectives {
+	margin-top: 1000px;
+}
+
+#div1 {
+	position: relative;
+	height: 150px;
+	width: 150px;
+	margin-left: 60px;
+	border: 1px solid blue;
+	/* distance from user */
+	perspective: 100px;
+}
+
+/* div2 inside div1 */
+#div2 {
+	padding: 50px;
+	position: absolute;
+	border: 1px solid black;
+	background-color: red;
+	background: rgba(100, 100, 100, 0.5);
+
+	transform-style: preserve-3d;
+	/* transform-style: flat; */
+	transform: rotateX(45deg);
+}

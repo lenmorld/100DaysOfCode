@@ -1,0 +1,76 @@
+.mustache {
+	width: 180px;
+	height: 180px;
+	border-radius: 50%;
+
+	position: absolute;
+	color: black;
+
+	left: 100px;
+
+	/* computed value of color */
+	/* background-color: blue; */
+
+	/* box-shadow: x-offset y-offset blur spread color */
+
+	/* box-shadow:
+		50px 50px 100px 50px blue,
+		100px 100px 0 0 currentColor,
+		150px 150px 0 0 currentColor,
+		200px 200px 0 0 currentColor,
+		250px 250px 0 0 currentColor; */
+
+	box-shadow:
+		150px 240px 0 0 currentColor,
+		300px 240px 0 0 currentColor;
+}
+
+.mustache::before {
+	content: " ";
+	position: absolute;
+	width: 210px;
+	height: 120px;
+	border-bottom: solid 180px currentColor;
+	/* background-color: red; */
+
+	/* border-radius: top-left  top-right  bottom-right bottom-left */
+
+	border-radius: 0 0 0 100%;
+
+	/* put on top of the box shadow */
+	left: 30px;
+	top: 120px;
+
+	/* rotate -40deg towards center */
+	transform: rotate(-40deg);
+
+	/* transform-origin: x-offset y-offset */
+	transform-origin: right 210px;
+}
+
+.mustache::after {
+	content: " ";
+	position: absolute;
+	width: 210px;
+	height: 120px;
+	border-bottom: solid 180px currentColor;
+	/* background-color: red; */
+
+	/* border-radius: top-left  top-right  bottom-right bottom-left */
+
+	border-radius: 0 0 100% 0;
+
+	/* put on top of the box shadow */
+	/* left: 30px;
+	top: 120px; */
+
+	/* 210 + 180? */
+	left: 390px;
+	top: 120px;
+
+	/* rotate -40deg towards center */
+	transform: rotate(40deg);
+
+	/* transform-origin: x-offset y-offset */
+	transform-origin: left 210px;
+}

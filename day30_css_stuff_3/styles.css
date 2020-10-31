@@ -1,0 +1,46 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+	height: 65vh;
+	max-height: 600px;
+	/* background-color: aquamarine; */
+
+	/* display: flex; */
+
+	display: grid;
+	grid-template-areas: "hero";
+}
+
+header>* {
+	grid-area: hero;
+	/* position: absolute; */
+}
+
+header img {
+	object-fit: cover;
+	/* object-position: 5vw -5vmin; */
+	height: 100%;
+	width: 80%;
+
+	/* goes with position: absolute */
+	/* right: 0; */
+
+	/* goes with flex/grid */
+	justify-self: end;
+}
+
+header .hero {
+	max-width: 50%;
+	z-index: 1;
+
+	border-radius: 5%;
+	margin: 1rem;
+	padding: 1rem;
+
+	/* background-color: white; */
+
+	background-color: rgba(249, 251, 253, 0.8);
+	/* opacity: 0.5; */
+}
