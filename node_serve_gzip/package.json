@@ -18,7 +18,7 @@
 	},
 	"homepage": "https://github.com/lenmorld/react_node_workshop#readme",
 	"dependencies": {
-		"axios": "^0.18.0",
+		"axios": "^0.21.1",
 		"compression": "^1.7.4",
 		"express": "^4.16.3",
 		"qs": "^6.6.0",
